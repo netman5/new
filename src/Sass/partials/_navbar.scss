@@ -6,12 +6,17 @@
   position: relative;
   padding: 0.5rem 0rem;
   color: white;
+  background-color: $hero-bg;
 }
 
 .brandName{
   font-size: 1.5rem;
-  color: white;
+  color: $paragraph-text-color;
   margin-left: 1rem;
+
+  span{
+    color: white;
+  }
 }
 
 
