@@ -1,27 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './components/Navs/NavBar';
+import './Sass/App.scss';
 
 function App() {
+  const links = [
+    { id: '1', path: '/', name: 'Home' },
+    { id: '2', path: '/work', name: 'Work' },
+    { id: '3', path: '/contact', name: 'Contact' },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar links={links} />
     </div>
   );
 }
