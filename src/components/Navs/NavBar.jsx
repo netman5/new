@@ -12,7 +12,7 @@ const NavBar = ({ links }) => {
       <h1>
         {' '}
         <a href="/" className="brandName">
-          <span>Ola</span>
+          <span>Oladipupo</span>
           {' '}
           Ishola
         </a>
@@ -31,6 +31,11 @@ const NavBar = ({ links }) => {
             <li key={link.id}>
               <NavLink
                 to={link.path}
+                style={({ isActive }) => ({
+                  color: isActive ? '#65D493' : '',
+                  borderBottom: isActive ? '1px solid #65D493' : '',
+                  transform: isActive ? 'translateX(0)' : 'translateX(-10%)',
+                })}
                 onClick={() => setIsNavExpanded(!isNavExpanded)}
               >
                 {link.name}
