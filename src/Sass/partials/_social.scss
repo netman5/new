@@ -1,0 +1,46 @@
+.social{
+  width: 40%;
+  align-self: start;
+  margin-left: 64px;
+  display: flex;
+
+  .social-image{
+    width: 50px;
+    height: 50px;
+
+    img{
+      width: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+  }
+
+  .social-icons{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #000;
+    font-size: 1.5rem;
+    font-family: $text-font-family;
+    text-align: center;
+
+
+    .social-icons__icon{
+      border: 1px solid #000;
+      border-radius: 50%;
+      padding: 2px;
+      color: $text-highlight-color;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $text-highlight-color;
+        color: #000;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+
+
+}

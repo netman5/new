@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import SocialIcons from '../Social Icons/SocialIcons';
 
 const Home = () => {
   const temp = 'Hello World';
@@ -25,6 +26,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <SocialIcons />
       </div>
     </div>
   );
