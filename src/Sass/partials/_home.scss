@@ -2,7 +2,7 @@
   display: flex;
   height: 100vh;
   background-color: $hero-bg;
-  border: 1px solid green;
+  // border: 1px solid green;
   padding: 20px;
   gap: 10px;
 
@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     padding: 20px;
     border: 1px solid goldenrod;
@@ -43,18 +44,26 @@
           color: black;
           padding: 5px;
           text-align: center;
-          // border: 1px solid red;
           border-radius: 3px;
         }
 
+        .home-container__info__title__two{
+          font-size: 2rem;
+          font-family: $font-family-heading;
+          font-weight: 500;
+          padding: 5px;
+          border-radius: 3px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
         p {
+          width: 65%;
           font-size: .9rem;
           font-family: $text-font-family;
           color: $paragraph-text-color;
-          padding: 20px;
-          background-color: $about-bg;
-          border: 1px solid red;
-          padding: 20px;
+          padding: 5px;
         }
       }
     }

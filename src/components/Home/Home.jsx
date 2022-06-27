@@ -9,14 +9,14 @@ const Home = () => {
         <div className="home-container__info__box">
           <div className="home-container__info__content">
             <h1 className="home-container__info__title">FullStack Developer</h1>
-            <h2>
+            <h2 className="home-container__info__title__two">
               Hi! I help business
-              <span>Write app that scale</span>
+              <span>Write customer centric app & logic that scale.</span>
             </h2>
             <p>I turn a design into a beautifully simple code, and I love what I do.</p>
 
             <div className="home-container__info__buttons">
-              <a href="/" className="btn">Let's Connect</a>
+              <a href="https://www.linkedin.com/in/ola-ishola/" target="_blank" rel="noreferrer" className="btn">Let's Connect</a>
             </div>
           </div>
           <div className="home-container__info__image">
