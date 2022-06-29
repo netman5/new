@@ -1,9 +1,11 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import SocialIcons from '../Social Icons/SocialIcons';
+import WebImage from '../../images/web1.png';
 
 const Home = () => {
-  const temp = 'Hello World';
+  // const temp = 'Hello World';
   return (
     <div className="home-container">
       <div className="home-container__info">
@@ -21,8 +23,8 @@ const Home = () => {
             </div>
           </div>
           <div className="home-container__info__image">
-            <div>
-              {temp}
+            <div className="home-container__info__image__imgcontainer">
+              <img src={WebImage} alt="Web Illustration" />
             </div>
           </div>
         </div>
