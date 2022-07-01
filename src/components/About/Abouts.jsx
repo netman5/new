@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import {
   SiJavascript, SiRedux, SiHtml5, SiCss3,
@@ -84,7 +85,41 @@ const Abouts = () => (
         </div>
       </div>
       <div className="about-container__intro">
-        <p>Me</p>
+        <h4>About Me</h4>
+        <div className="about-container__intro__box">
+          <h3 className="about-container__intro__box__title">Hello! I'm Ola Ishola</h3>
+          <div className="about-container__intro__content">
+            <p>
+              A graduate of Microverse Full Stack development course,
+              a remote software development school that allows devs
+              from all over the world to pair-program and build projects together. I've
+              spent the last several months working on a number of projects ranging
+              from a landing page to web applications
+              using JavaScript, HTML, CSS, MongoDB, Nodejs, React, Redux,
+              Ruby on Rails, Express, and Bootstrap.
+            </p>
+
+            <p>
+              Before transitioning into software development I worked as a
+              security surveillance engineer
+              where I lead, and trained teams of engineers in building
+              and managing enterprise-level security systems. The type of work was definitely
+              different from development, but there are some transferable skills
+              I now use every day as a developer:
+              problem-solving, effective communication, multi-tasking, collaboration, and more.
+            </p>
+
+            <button type="button" className="about-container__intro__content__btn">
+              <a
+                href="https://docs.google.com/document/d/1Iu-eYgyRERKkkkg7YppTUpA92yHGUTbGgzgyYn4NFzM/edit?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Click here to view my resume
+              </a>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>

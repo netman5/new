@@ -1,15 +1,17 @@
-.about{
+.about {
   padding: 40px;
   background-color: $hero-bg;
+  border-radius: 3px;
 
-  h2{
+  h2 {
     font-size: 1.3rem;
     font-family: $font-family-heading;
     font-weight: 500;
     gap: 10px;
     text-align: center;
   }
-  .about-container{
+
+  .about-container {
     display: flex;
     padding: 10px;
     gap: 10px;
@@ -17,13 +19,14 @@
     margin: 0 auto;
     background-color: $about-bg;
 
-    .about-container__skills, .about-container__intro{
+    .about-container__skills,
+    .about-container__intro {
       flex: 1;
       padding: 20px;
       // border: 1px solid red
     }
 
-    .about-container__skills__item{
+    .about-container__skills__item {
       display: flex;
       flex-direction: column;
       margin-bottom: 10px;
@@ -32,23 +35,22 @@
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       transition: all 0.3s ease-in-out;
 
-      &:hover{
+      &:hover {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transform: scale(1.06);
-        padding: 0 20px 0 20px;
       }
 
-      .about-container__skills__top{
+      .about-container__skills__top {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .about-container__skills__item_top__icon{
+        .about-container__skills__item_top__icon {
           color: $text-highlight-color;
         }
       }
 
-      .about-container__skills__item__title{
+      .about-container__skills__item__title {
         width: 24%;
         font-size: 1.5rem;
         font-family: $text-font-family;
@@ -60,20 +62,20 @@
         text-align: center;
       }
 
-      p{
+      p {
         font-size: .9rem;
         font-family: $text-font-family;
         padding: 5px;
         color: $paragraph-text-color;
       }
 
-      .about-container__skills__item__list{
+      .about-container__skills__item__list {
         display: flex;
         flex-direction: column;
         gap: 10px;
         width: 100%;
 
-        .about-container__skills__item__list__item{
+        .about-container__skills__item__list__item {
           display: flex;
           flex-direction: row;
           gap: 10px;
@@ -84,6 +86,67 @@
         }
       }
     }
+
+    .about-container__intro {
+      // border: 1px solid red;
+
+      h4 {
+        font-size: .8rem;
+      }
+
+      .about-container__intro__box {
+        .about-container__intro__box__title {
+          font-size: 2rem;
+          font-family: $font-family-heading;
+          font-weight: 500;
+        }
+
+        .about-container__intro__content {
+          p {
+            font-size: .9rem;
+            font-family: $text-font-family;
+            color: $paragraph-text-color;
+          }
+
+          .about-container__intro__content__btn {
+            background-color: $text-highlight-color;
+            border: 1px solid $text-highlight-color;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 400;
+            outline: none;
+            outline: 0;
+            padding: 10px 25px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 150ms, box-shadow 150ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+
+            a {
+              color: black;
+            }
+
+            &:hover {
+              box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+              transform: translateY(-2px);
+            }
+          }
+
+
+          @media (min-width: 768px) {
+            .about-container__intro__content__btn {
+              padding: 10px 30px;
+            }
+          }
+
+        }
+      }
+
+    }
   }
 }
-
