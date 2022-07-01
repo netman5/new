@@ -1,21 +1,21 @@
-.social{
+.social {
   width: 40%;
   align-self: start;
   margin-left: 64px;
   display: flex;
 
-  .social-image{
+  .social-image {
     width: 50px;
     height: 50px;
 
-    img{
+    img {
       width: 100%;
       border-radius: 50%;
       object-fit: contain;
     }
   }
 
-  .social-icons{
+  .social-icons {
     width: 100%;
     display: flex;
     gap: 10px;
@@ -26,21 +26,18 @@
     font-family: $text-font-family;
     text-align: center;
 
-
-    .social-icons__icon{
+    .social-icons__icon {
       border-radius: 50%;
       padding: 2px;
       color: $paragraph-text-color;
       cursor: pointer;
       border: 1px solid $text-highlight-color;
 
-      &:hover{
+      &:hover {
         background-color: #000;
         color: $text-highlight-color;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
     }
   }
-
-
 }

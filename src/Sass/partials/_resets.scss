@@ -50,10 +50,10 @@ textarea {
 }
 
 /* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
-}
+// meter {
+//   -webkit-appearance: revert;
+//   appearance: revert;
+// }
 
 /* reset default text opacity of input placeholder */
 ::placeholder {
@@ -66,6 +66,11 @@ meter {
   display: none;
 }
 
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
 /* revert for bug in Chromium browsers
  - fix for the content editable attribute will work properly.
  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
@@ -73,11 +78,5 @@ meter {
   -moz-user-modify: read-write;
   -webkit-user-modify: read-write;
   overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
+  user-select: auto;
 }
