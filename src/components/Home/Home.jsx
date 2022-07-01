@@ -5,7 +5,6 @@ import SocialIcons from '../Social Icons/SocialIcons';
 import WebImage from '../../images/web1.png';
 
 const Home = () => {
-  // const temp = 'Hello World';
   return (
     <div className="home-container">
       <div className="home-container__info">

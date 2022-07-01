@@ -1,0 +1,20 @@
+.about{
+  width: 100%;
+  padding: 20px;
+
+  .about-container{
+    display: flex;
+    padding: 10px;
+    border: 1px solid green;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+
+    .about-container__skills, .about-container__intro{
+      flex: 1;
+      padding: 20px;
+      border: 1px solid red
+    }
+  }
+}
+
