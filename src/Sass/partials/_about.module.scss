@@ -1,19 +1,26 @@
 .about{
-  width: 100%;
-  padding: 20px;
+  padding: 40px;
+  background-color: $hero-bg;
 
+  h2{
+    font-size: 1.3rem;
+    font-family: $font-family-heading;
+    font-weight: 500;
+    gap: 10px;
+    text-align: center;
+  }
   .about-container{
     display: flex;
     padding: 10px;
-    border: 1px solid green;
     gap: 10px;
     width: 90%;
     margin: 0 auto;
+    background-color: $about-bg;
 
     .about-container__skills, .about-container__intro{
       flex: 1;
       padding: 20px;
-      border: 1px solid red
+      // border: 1px solid red
     }
 
     .about-container__skills__item{
