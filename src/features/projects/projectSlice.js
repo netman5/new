@@ -2,11 +2,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = process.env.BASE_URL;
+const baseUrl = 'http://localhost:1337/api';
 
 const initialState = {
   projects: [],
-  project: {},
+  // project: {},
   loading: false,
   error: null,
 };
@@ -33,14 +33,9 @@ const projectSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {
-    displayProjects: (state, action) => {
-      const { payload } = action;
-      state.projects = [...payload];
-    },
-
-    getAproject: (state, action) => {
-      state.project = { ...action.payload };
-    },
+    // getAproject: (state, action) => {
+    //   state.project = { ...action.payload };
+    // },
   },
 
   extraReducers: {
@@ -55,23 +50,23 @@ const projectSlice = createSlice({
 
     [getProjectItems.rejected]: (state, action) => {
       state.loading = false;
-      console.log(action.payload);
+      state.error = action.payload;
     },
 
-    [getSingleProject.pending]: (state) => {
-      state.loading = true;
-    },
+    // [getSingleProject.pending]: (state) => {
+    //   state.loading = true;
+    // },
 
-    [getSingleProject.fulfilled]: (state, action) => {
-      state.loading = false;
-      state.project = { ...action.payload };
-      console.log(state.project);
-    },
+    // [getSingleProject.fulfilled]: (state, action) => {
+    //   state.loading = false;
+    //   state.project = { ...action.payload };
+    //   console.log(state.project);
+    // },
 
-    [getSingleProject.rejected]: (state, action) => {
-      state.loading = false;
-      console.log(action.payload);
-    },
+    // [getSingleProject.rejected]: (state, action) => {
+    //   state.loading = false;
+    //   console.log(action.payload);
+    // },
   },
 });
 
