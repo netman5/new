@@ -47,7 +47,7 @@ const Works = () => {
               </div>
             </div>
           </div>
-        ))}
+        )).reverse()}
       </div>
     </div>
   );

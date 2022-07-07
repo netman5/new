@@ -33,8 +33,14 @@ const projectSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {
-    // getAproject: (state, action) => {
-    //   state.project = { ...action.payload };
+    // sortData: (state, action) => {
+    //   const sort = action.payload;
+    //   state.projects = state.projects.sort((a, b) => {
+    //     if (sort === 'asc') {
+    //       return a.name.localeCompare(b.name);
+    //     }
+    //     return b.name.localeCompare(a.name);
+    //   });
     // },
   },
 
@@ -70,5 +76,5 @@ const projectSlice = createSlice({
   },
 });
 
-export const { displayProjects } = projectSlice.actions;
+export const { sortData } = projectSlice.actions;
 export default projectSlice.reducer;
