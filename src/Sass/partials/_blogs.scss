@@ -1,0 +1,19 @@
+.blog_container{
+  background-color: $about-bg;
+  padding: 20px;
+
+  .blog_container__top{
+    width: 83%;
+    margin: 0 auto;
+    border: 1px solid goldenrod;
+    margin-top: 100px;
+
+    h3{
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}

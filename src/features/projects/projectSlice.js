@@ -32,17 +32,7 @@ export const getSingleProject = createAsyncThunk('projects/getSingleProject', as
 const projectSlice = createSlice({
   name: 'projects',
   initialState,
-  reducers: {
-    // sortData: (state, action) => {
-    //   const sort = action.payload;
-    //   state.projects = state.projects.sort((a, b) => {
-    //     if (sort === 'asc') {
-    //       return a.name.localeCompare(b.name);
-    //     }
-    //     return b.name.localeCompare(a.name);
-    //   });
-    // },
-  },
+  reducers: {},
 
   extraReducers: {
     [getProjectItems.pending]: (state) => {
@@ -58,21 +48,6 @@ const projectSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-
-    // [getSingleProject.pending]: (state) => {
-    //   state.loading = true;
-    // },
-
-    // [getSingleProject.fulfilled]: (state, action) => {
-    //   state.loading = false;
-    //   state.project = { ...action.payload };
-    //   console.log(state.project);
-    // },
-
-    // [getSingleProject.rejected]: (state, action) => {
-    //   state.loading = false;
-    //   console.log(action.payload);
-    // },
   },
 });
 
