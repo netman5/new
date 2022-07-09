@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 import { getBlogs } from '../../features/blogs/blogSlice';
 import NoData from '../Works/NoData';
 
@@ -11,6 +12,7 @@ const Blogs = () => {
     dispatch(getBlogs());
   }, []);
 
+  console.log(blogs);
   const blogLists = blogs.length > 6 ? 6 : blogs.length;
 
   if (loading) {
@@ -27,13 +29,18 @@ const Blogs = () => {
         <h3>Recent posts</h3>
         <div className="blog_container__items">
           {blogs.slice(0, blogLists).map((blog) => (
-            <div className="blog_container__item" key={blog.id}>
+            <div className="blog_container__item" key={blog.guid}>
               <div className="blog_container__item__image">
-                <img src={blog.image} alt={blog.title} />
+                <img src={blog.thumbnail} alt={blog.title} />
               </div>
               <div className="blog_container__item__content">
-                <h4>{blog.title}</h4>
-                <p>{blog.description}</p>
+                <a href={blog.link} target="_black" rel="noopener noreferrer">{blog.title}</a>
+                <p>
+                  Published:
+                  {' '}
+                  {moment(blog.pubDate).format('dddd, MMMM Do YYYY')}
+
+                </p>
               </div>
             </div>
           ))}
