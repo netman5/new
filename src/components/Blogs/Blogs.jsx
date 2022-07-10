@@ -12,8 +12,7 @@ const Blogs = () => {
     dispatch(getBlogs());
   }, []);
 
-  console.log(blogs);
-  const blogLists = blogs.length > 6 ? 6 : blogs.length;
+  const blogLists = blogs.filter((blog) => blog.categories.length > 0).slice(0, 6);
 
   if (loading) {
     return <div className="loader">Loading...</div>;
@@ -28,19 +27,21 @@ const Blogs = () => {
       <div className="blog_container__top">
         <h3>Recent posts</h3>
         <div className="blog_container__items">
-          {blogs.slice(0, blogLists).map((blog) => (
+          {blogLists.map((blog) => (
             <div className="blog_container__item" key={blog.guid}>
               <div className="blog_container__item__image">
                 <img src={blog.thumbnail} alt={blog.title} />
               </div>
               <div className="blog_container__item__content">
-                <a href={blog.link} target="_black" rel="noopener noreferrer">{blog.title}</a>
-                <p>
-                  Published:
-                  {' '}
-                  {moment(blog.pubDate).format('dddd, MMMM Do YYYY')}
+                <a href={blog.link} target="_black" rel="noopener noreferrer" className="blog-title">
+                  {blog.title}
+                  <p className="published">
+                    Published:
+                    {' '}
+                    {moment(blog.pubDate).format('dddd, MMMM Do YYYY')}
 
-                </p>
+                  </p>
+                </a>
               </div>
             </div>
           ))}
