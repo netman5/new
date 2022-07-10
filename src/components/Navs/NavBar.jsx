@@ -12,9 +12,8 @@ const NavBar = ({ links }) => {
       <h1>
         {' '}
         <a href="/" className="brandName">
-          <span>Oladipupo</span>
-          {' '}
-          Ishola
+          <span>Oi</span>
+          sh
         </a>
       </h1>
       <button
