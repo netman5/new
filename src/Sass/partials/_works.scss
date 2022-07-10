@@ -1,7 +1,9 @@
-.work-container {
+.work-container,
+.container {
   background-color: $hero-bg;
 
-  .work-container__contents {
+  .work-container__contents,
+  .no-data {
     padding: 20px;
     width: 83%;
     margin: 0 auto;
@@ -20,7 +22,7 @@
 
     .work-content__items {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
       gap: 20px;
       padding: 5px;
 
@@ -71,7 +73,8 @@
         }
 
         .work-content__item-image {
-          width: 100%;
+          width: 80%;
+          margin: auto;
           margin-bottom: 10px;
 
           img {
@@ -139,6 +142,26 @@
           }
         }
       }
+    }
+  }
+
+  .no-data {
+    background-color: $about-bg;
+
+    h1 {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      color: $paragraph-text-color;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-align: center;
     }
   }
 }

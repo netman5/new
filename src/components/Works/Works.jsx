@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProjectItems } from '../../features/projects/projectSlice';
+import NoData from './NoData';
 
 const Works = () => {
   const dispatch = useDispatch();
@@ -11,15 +12,15 @@ const Works = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <div>{loading}</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error!</div>;
+    return <div>{error}</div>;
   }
 
   if (!data) {
-    return <div>No data</div>;
+    return <NoData error={error} />;
   }
 
   return (
