@@ -1,8 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaAngellist } from 'react-icons/fa';
+import {
+  BsGithub,
+  BsLinkedin,
+  BsTwitter,
+  BsMedium,
+} from 'react-icons/bs';
 import links from '../../utils/links';
 import Footer from '../Footer/Footer';
-import SocialIcons from '../Social Icons/SocialIcons';
+// import SocialIcons from '../Social Icons/SocialIcons';
 
 const Contact = () => {
   const text = "Let's make something great together!";
@@ -10,7 +17,10 @@ const Contact = () => {
     <div className="contact">
       <div className="contact__content">
         <div className="contact__left">
-          <h2>{text}</h2>
+          <div className="left__text">
+            <h2>{text}</h2>
+            <p>Start by saying hi!</p>
+          </div>
           <div className="contact__form">
             <form action="">
               <label htmlFor="name">
@@ -20,7 +30,7 @@ const Contact = () => {
                 <input type="text" placeholder="Email" name="email" />
               </label>
               <textarea name="" id="" cols="30" rows="10" placeholder="Message" />
-              <button type="submit" className="form-btn">Send</button>
+              <button type="submit" className="form-btn">Get In Touch</button>
             </form>
 
             <Footer />
@@ -30,10 +40,10 @@ const Contact = () => {
         <div className="contact__right">
           <div className="contact__info">
             <h2>Contact Info</h2>
-            <p>olaishola@hotmail.co.uk</p>
+            <p>Email: olaishola@hotmail.co.uk</p>
           </div>
 
-          <div className="contact__links">
+          <div className="contact__links contact-links">
             {links.map((link) => (
               <li key={link.id}>
                 <NavLink
@@ -49,7 +59,23 @@ const Contact = () => {
               </li>
             ))}
           </div>
-          <SocialIcons />
+          <div className="social-icons">
+            <a href="https://github.com/netman5" target="_blank" rel="noopener noreferrer">
+              <BsGithub className="social-icons__icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/ola-ishola/" target="_blank" rel="noopener noreferrer">
+              <BsLinkedin className="social-icons__icon" />
+            </a>
+            <a href="https://twitter.com/Orlaish" target="_blank" rel="noopener noreferrer">
+              <BsTwitter className="social-icons__icon" />
+            </a>
+            <a href="https://olaishola.medium.com/" target="_blank" rel="noopener noreferrer">
+              <BsMedium className="social-icons__icon" />
+            </a>
+            <a href="https://angel.co/u/ola-ishola-1" target="_blank" rel="noopener noreferrer">
+              <FaAngellist className="social-icons__icon" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
