@@ -1,7 +1,9 @@
-.work-container, .container {
+.work-container,
+.container {
   background-color: $hero-bg;
 
-  .work-container__contents, .no-data {
+  .work-container__contents,
+  .no-data {
     padding: 20px;
     width: 83%;
     margin: 0 auto;
@@ -72,8 +74,8 @@
 
         .work-content__item-image {
           width: 80%;
-          margin-bottom: 10px;
           margin: auto;
+          margin-bottom: 10px;
 
           img {
             width: 100%;
@@ -143,10 +145,10 @@
     }
   }
 
-  .no-data{
+  .no-data {
     background-color: $about-bg;
 
-    h1{
+    h1 {
       color: white;
       font-size: 1.1rem;
       font-weight: bold;
@@ -154,7 +156,7 @@
       text-align: center;
     }
 
-    p{
+    p {
       color: $paragraph-text-color;
       font-size: 1.1rem;
       font-weight: 400;
