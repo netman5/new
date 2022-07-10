@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+// import 'dotenv/config';
 import { FaAngellist } from 'react-icons/fa';
 import {
   BsGithub,
@@ -7,12 +8,21 @@ import {
   BsTwitter,
   BsMedium,
 } from 'react-icons/bs';
+import { useForm, ValidationError } from '@formspree/react';
 import links from '../../utils/links';
 import Footer from '../Footer/Footer';
-// import SocialIcons from '../Social Icons/SocialIcons';
+
+// require('dotenv').config();
 
 const Contact = () => {
   const text = "Let's make something great together!";
+  const [state, handleSubmit] = useForm('xzbopydg');
+  // console.log(process.env.FORMSPREE_ID);
+
+  if (state.succeeded) {
+    return <div>Thank you for signing up!</div>;
+  }
+
   return (
     <div className="contact">
       <div className="contact__content">
@@ -22,15 +32,34 @@ const Contact = () => {
             <p>Start by saying hi!</p>
           </div>
           <div className="contact__form">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <label htmlFor="name">
                 <input type="text" placeholder="Name" name="name" id="name" />
               </label>
               <label htmlFor="email">
-                <input type="text" placeholder="Email" name="email" />
+                <input
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
               </label>
-              <textarea name="" id="" cols="30" rows="10" placeholder="Message" />
-              <button type="submit" className="form-btn">Get In Touch</button>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Message"
+              />
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
+              <button type="submit" className="form-btn" disabled={state.submitting}>Get In Touch</button>
             </form>
 
             <Footer />
