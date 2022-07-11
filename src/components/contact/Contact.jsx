@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import 'dotenv/config';
 import { FaAngellist } from 'react-icons/fa';
 import {
   BsGithub,
@@ -12,12 +11,9 @@ import { useForm, ValidationError } from '@formspree/react';
 import links from '../../utils/links';
 import Footer from '../Footer/Footer';
 
-// require('dotenv').config();
-
 const Contact = () => {
   const text = "Let's make something great together!";
-  const [state, handleSubmit] = useForm('xzbopydg');
-  // console.log(process.env.FORMSPREE_ID);
+  const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
 
   if (state.succeeded) {
     return <div>Thank you for signing up!</div>;
