@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Menu from '../../Icons/Icons';
 
@@ -11,10 +11,10 @@ const NavBar = ({ links }) => {
     <nav className="navigation">
       <h1>
         {' '}
-        <a href="/" className="brandName">
+        <Link to="/" className="brandName">
           <span>Oi</span>
           sh
-        </a>
+        </Link>
       </h1>
       <button
         type="button"

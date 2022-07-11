@@ -6,12 +6,12 @@ import Works from '../Works/Works';
 
 function HomeContainer() {
   return (
-    <main>
+    <>
       <Abouts />
       <Works />
       <Blogs />
       <Contact />
-    </main>
+    </>
   );
 }
 
