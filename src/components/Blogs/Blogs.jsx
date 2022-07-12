@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Element } from 'react-scroll';
 import moment from 'moment';
 import { getBlogs } from '../../features/blogs/blogSlice';
 import NoData from '../Works/NoData';
@@ -23,31 +24,33 @@ const Blogs = () => {
   }
 
   return (
-    <div className="blog_container">
-      <div className="blog_container__top">
-        <h3>Recent posts</h3>
-        <div className="blog_container__items">
-          {blogLists.map((blog) => (
-            <div className="blog_container__item" key={blog.guid}>
-              <div className="blog_container__item__image">
-                <img src={blog.thumbnail} alt={blog.title} />
-              </div>
-              <div className="blog_container__item__content">
-                <a href={blog.link} target="_black" rel="noopener noreferrer" className="blog-title">
-                  {blog.title}
-                  <p className="published">
-                    Published:
-                    {' '}
-                    {moment(blog.pubDate).format('dddd, MMMM Do YYYY')}
+    <Element id="blogs" name="blogs">
+      <div className="blog_container">
+        <div className="blog_container__top">
+          <h3>Recent posts</h3>
+          <div className="blog_container__items">
+            {blogLists.map((blog) => (
+              <div className="blog_container__item" key={blog.guid}>
+                <div className="blog_container__item__image">
+                  <img src={blog.thumbnail} alt={blog.title} />
+                </div>
+                <div className="blog_container__item__content">
+                  <a href={blog.link} target="_black" rel="noopener noreferrer" className="blog-title">
+                    {blog.title}
+                    <p className="published">
+                      Published:
+                      {' '}
+                      {moment(blog.pubDate).format('dddd, MMMM Do YYYY')}
 
-                  </p>
-                </a>
+                    </p>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 

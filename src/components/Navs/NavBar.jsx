@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as LinkR } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Scroll from 'react-scroll';
+import { Link as LinkS } from 'react-scroll';
 import Menu from '../../Icons/Icons';
-
-const { ScrollLink } = Scroll;
 
 const NavBar = ({ links }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -14,10 +12,10 @@ const NavBar = ({ links }) => {
     <nav className="navigation">
       <h1>
         {' '}
-        <Link to="/" className="brandName">
+        <LinkR to="/" className="brandName">
           <span>Oi</span>
           sh
-        </Link>
+        </LinkR>
       </h1>
       <button
         type="button"
@@ -31,12 +29,14 @@ const NavBar = ({ links }) => {
         <ul>
           {links.map((link) => (
             <li key={link.id}>
-              <ScrollLink
+              <LinkS
                 to={link.path}
                 spy
                 smooth
-                duration={500}
-                offset={-70}
+                duration={1000}
+                activeClass="active"
+                className="nav-links"
+                // offset={-70}
                 // style={({ isActive }) => ({
                 //   color: isActive ? '#65D493' : '',
                 //   borderBottom: isActive ? '1px solid #65D493' : '',
@@ -45,7 +45,7 @@ const NavBar = ({ links }) => {
                 onClick={() => setIsNavExpanded(!isNavExpanded)}
               >
                 {link.name}
-              </ScrollLink>
+              </LinkS>
             </li>
           ))}
         </ul>

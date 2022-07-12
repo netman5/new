@@ -1,5 +1,5 @@
 const links = [
-  { id: '1', path: 'home', name: 'Home' },
+  { id: '1', path: '/', name: 'Home' },
   { id: '2', path: 'works', name: 'Work' },
   { id: '3', path: 'about', name: 'About' },
   { id: '4', path: 'blogs', name: 'Blogs' },
