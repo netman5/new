@@ -23,7 +23,7 @@ import { BiCodeAlt } from 'react-icons/bi';
 const Abouts = () => (
   <Element name="about" id="about">
     <section className="about">
-      <h2>About & Tech Stacks</h2>
+      <h2 className="about__title">About & Tech Stacks</h2>
       <div className="about-container">
         <div className="about-container__skills">
           <div className="about-container__skills__item">
