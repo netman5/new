@@ -6,15 +6,11 @@ import NoData from './NoData';
 
 const Works = () => {
   const dispatch = useDispatch();
-  const { data, error, loading } = useSelector((state) => state.projects.projects);
+  const { data, error } = useSelector((state) => state.projects.projects);
 
   useEffect(() => {
     dispatch(getProjectItems());
   }, [dispatch]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   if (error) {
     return <div>{error}</div>;
@@ -41,7 +37,8 @@ const Works = () => {
                       <h5>{attributes.project_details.role}</h5>
                     </div>
                     <div className="stacks-lists">
-                      {attributes.tech.stacks.map((item) => <ul key={item}><li>{item}</li></ul>)}
+                      {attributes
+                        .tech.stacks.slice(0, 3).map((item) => <ul key={item}><li>{item}</li></ul>)}
                     </div>
                   </div>
                 </div>
@@ -56,7 +53,7 @@ const Works = () => {
                   </div>
                 </div>
               </div>
-            )).reverse()}
+            )).sort((a, b) => b.updatedAt - a.updatedAt)}
           </div>
         </div>
       </div>
