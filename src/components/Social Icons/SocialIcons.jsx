@@ -6,7 +6,7 @@ import {
   BsTwitter,
   BsMedium,
 } from 'react-icons/bs';
-import User from '../../images/download.png';
+import User from '../../images/me.jpg';
 
 const SocialIcons = () => {
   const image = User;
