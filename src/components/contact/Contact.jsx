@@ -1,5 +1,4 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
 import { Element, Link } from 'react-scroll';
 import { FaAngellist } from 'react-icons/fa';
 import {
@@ -9,19 +8,24 @@ import {
   BsMedium,
 } from 'react-icons/bs';
 import { useForm, ValidationError } from '@formspree/react';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../features/modal/modalSlice';
 import links from '../../utils/links';
 import Footer from '../Footer/Footer';
 
 const Contact = () => {
   const text = "Let's make something great together!";
   const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
+  const dispatch = useDispatch();
 
-  if (state.succeeded) {
-    return <div>Thank you for reaching out!</div>;
-  }
+  // if (state.succeeded) {
+  //   dispatch(openModal());
+  //   return 'hello';
+  // }
 
   return (
     <Element name="contact" id="contact">
+      {state.succeeded && dispatch(openModal())}
       <div className="contact">
         <div className="contact__content">
           <div className="contact__left">
