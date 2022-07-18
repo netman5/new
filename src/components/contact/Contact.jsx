@@ -18,14 +18,8 @@ const Contact = () => {
   const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
   const dispatch = useDispatch();
 
-  if (state.succeeded) {
-    dispatch(openModal());
-    return 'hello';
-  }
-
   return (
     <Element name="contact" id="contact">
-      {/* {state.succeeded && dispatch(openModal())} */}
       <div className="contact">
         <div className="contact__content">
           <div className="contact__left">
@@ -61,7 +55,14 @@ const Contact = () => {
                   field="message"
                   errors={state.errors}
                 />
-                <button type="submit" className="form-btn" disabled={state.submitting}>Get In Touch</button>
+                <button
+                  type="submit"
+                  className="form-btn"
+                  disabled={state.submitting}
+                  onClick={() => dispatch(openModal())}
+                >
+                  Get In Touch
+                </button>
               </form>
 
               <Footer />
