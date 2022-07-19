@@ -7,7 +7,8 @@ const Modal = () => {
   return (
     <aside className="modal-container">
       <div className="modal">
-        <h5 className="modal-title">Thank you, I wll get back to you as soon as possible</h5>
+        <h4>Message Sent!</h4>
+        <p>Thank you. I wll get back to you as soon as possible.</p>
         <button
           type="button"
           className="close"

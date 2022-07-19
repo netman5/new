@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Element, Link } from 'react-scroll';
 import { FaAngellist } from 'react-icons/fa';
 import {
@@ -7,7 +7,7 @@ import {
   BsTwitter,
   BsMedium,
 } from 'react-icons/bs';
-import { ValidationError } from '@formspree/react';
+import { useForm, ValidationError } from '@formspree/react';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../features/modal/modalSlice';
 import links from '../../utils/links';
@@ -15,23 +15,23 @@ import Footer from '../Footer/Footer';
 
 const Contact = () => {
   const text = "Let's make something great together!";
-  // const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
-  const [state, setState] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
+  // const [state, setState] = useState({
+  //   name: '',
+  //   email: '',
+  //   message: '',
+  // });
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmitForm = (e) => {
     e.preventDefault();
     dispatch(openModal());
-    setState({
-      name: '',
-      email: '',
-      message: '',
-    });
+    // setState({
+    //   name: '',
+    //   email: '',
+    //   message: '',
+    // });
   };
 
   return (
@@ -81,7 +81,7 @@ const Contact = () => {
                   type="submit"
                   className="form-btn"
                   disabled={state.submitting}
-                  onClick={() => handleSubmit}
+                  onClick={(e) => handleSubmitForm(e)}
                 >
                   Get In Touch
                 </button>
