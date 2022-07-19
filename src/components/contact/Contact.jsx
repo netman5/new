@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Element, Link } from 'react-scroll';
 import { FaAngellist } from 'react-icons/fa';
 import {
@@ -7,7 +7,7 @@ import {
   BsTwitter,
   BsMedium,
 } from 'react-icons/bs';
-import { useForm, ValidationError } from '@formspree/react';
+import { ValidationError } from '@formspree/react';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../features/modal/modalSlice';
 import links from '../../utils/links';
@@ -15,8 +15,24 @@ import Footer from '../Footer/Footer';
 
 const Contact = () => {
   const text = "Let's make something great together!";
-  const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
+  // const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(openModal());
+    setState({
+      name: '',
+      email: '',
+      message: '',
+    });
+  };
 
   return (
     <Element name="contact" id="contact">
@@ -30,8 +46,14 @@ const Contact = () => {
             <div className="contact__form">
               <form onSubmit={handleSubmit}>
                 <label htmlFor="name">
-                  <input type="text" placeholder="Name" name="name" id="name" />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    id="name"
+                  />
                 </label>
+
                 <label htmlFor="email">
                   <input
                     type="text"
@@ -59,7 +81,7 @@ const Contact = () => {
                   type="submit"
                   className="form-btn"
                   disabled={state.submitting}
-                  onClick={() => dispatch(openModal())}
+                  onClick={() => handleSubmit}
                 >
                   Get In Touch
                 </button>
