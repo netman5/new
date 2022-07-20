@@ -31,15 +31,14 @@ const Contact = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     if (state.succeeded) {
-      return dispatch(openModal());
+      return openModal();
     }
     setInputVal({
       name: '',
       email: '',
       message: '',
     });
-
-    return 'Sucess';
+    return dispatch(openModal());
   };
 
   return (
