@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Element, Link } from 'react-scroll';
 import { FaAngellist } from 'react-icons/fa';
 import {
@@ -14,24 +14,32 @@ import links from '../../utils/links';
 import Footer from '../Footer/Footer';
 
 const Contact = () => {
+  const dispatch = useDispatch();
   const text = "Let's make something great together!";
   const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID);
-  // const [state, setState] = useState({
-  //   name: '',
-  //   email: '',
-  //   message: '',
-  // });
+  const [inputVal, setInputVal] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-  const dispatch = useDispatch();
+  const handleInputChange = (e) => {
+    const { name } = e.target;
+    setInputVal({ ...inputVal, [name]: e.target.value });
+  };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    dispatch(openModal());
-    // setState({
-    //   name: '',
-    //   email: '',
-    //   message: '',
-    // });
+    if (state.succeeded) {
+      return dispatch(openModal());
+    }
+    setInputVal({
+      name: '',
+      email: '',
+      message: '',
+    });
+
+    return 'Sucess';
   };
 
   return (
@@ -51,6 +59,8 @@ const Contact = () => {
                     placeholder="Name"
                     name="name"
                     id="name"
+                    value={inputVal.name}
+                    onChange={handleInputChange}
                   />
                 </label>
 
@@ -60,6 +70,8 @@ const Contact = () => {
                     placeholder="Email"
                     name="email"
                     id="email"
+                    value={inputVal.email}
+                    onChange={handleInputChange}
                   />
                   <ValidationError
                     prefix="Email"
@@ -71,6 +83,8 @@ const Contact = () => {
                   name="message"
                   id="message"
                   placeholder="Message"
+                  value={inputVal.message}
+                  onChange={handleInputChange}
                 />
                 <ValidationError
                   prefix="Message"
