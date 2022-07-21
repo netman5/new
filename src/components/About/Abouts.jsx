@@ -28,8 +28,8 @@ const Abouts = () => {
   return (
     <Element name="about">
       <section className="about">
-        <h2 className="about__title">About & Tech Stacks</h2>
-        <div className="about-container">
+        <h2 className="about__title" data-aos="fade-down-right">About & Tech Stacks</h2>
+        <div className="about-container" data-aos="zoom-in-up">
           <div className="about-container__skills">
             <div className="about-container__skills__item">
               <div className="about-container__skills__top">

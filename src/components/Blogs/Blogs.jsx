@@ -27,8 +27,12 @@ const Blogs = () => {
     <Element id="blogs" name="blogs">
       <div className="blog_container">
         <div className="blog_container__top">
-          <h3>Recent posts</h3>
-          <div className="blog_container__items">
+          <h3 data-aos="fade-down-right">Recent posts</h3>
+          <div
+            className="blog_container__items"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+          >
             {blogLists.map((blog) => (
               <div className="blog_container__item" key={blog.guid}>
                 <div className="blog_container__item__image">

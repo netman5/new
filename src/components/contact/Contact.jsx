@@ -46,11 +46,21 @@ const Contact = () => {
       <div className="contact">
         <div className="contact__content">
           <div className="contact__left">
-            <div className="left__text">
+            <div
+              className="left__text"
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
               <h2>{text}</h2>
               <p>Start by saying hi!</p>
             </div>
-            <div className="contact__form">
+            <div
+              className="contact__form"
+              data-aos="fade-right"
+              data-aos-offset="500"
+              data-aos-easing="ease-in-sine"
+            >
               <form onSubmit={handleSubmit}>
                 <label htmlFor="name">
                   <input
@@ -106,11 +116,14 @@ const Contact = () => {
           </div>
           <div className="contact__right">
             <div className="contact__info">
-              <h2>Contact Info</h2>
-              <p>Email: olaishola@hotmail.co.uk</p>
+              <h2 data-aos="fade-down">Contact Info</h2>
+              <p data-aos="fade-down">Email: olaishola@hotmail.co.uk</p>
             </div>
 
-            <div className="contact__links contact-links">
+            <div
+              className="contact__links contact-links"
+              data-aos="fade-down"
+            >
               {links.map((link) => (
                 <li key={link.id}>
                   <Link
@@ -126,7 +139,11 @@ const Contact = () => {
                 </li>
               ))}
             </div>
-            <div className="social-icons">
+            <div
+              className="social-icons"
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+            >
               <a href="https://github.com/netman5" target="_blank" rel="noopener noreferrer">
                 <BsGithub className="social-icons__icon" />
               </a>
