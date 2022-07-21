@@ -3,12 +3,13 @@
   background-color: $hero-bg;
   border-radius: 3px;
 
-  h2 {
+  .about__title {
     font-size: 1.3rem;
     font-family: $font-family-heading;
     font-weight: 500;
     gap: 10px;
     text-align: center;
+    color: white;
   }
 
   .about-container {
@@ -89,13 +90,15 @@
     .about-container__intro {
       h4 {
         font-size: 0.8rem;
+        color: $text-highlight-color;
       }
 
       .about-container__intro__box {
         .about-container__intro__box__title {
           font-size: 2rem;
           font-family: $font-family-heading;
-          font-weight: 500;
+          color: white;
+          margin-bottom: 10px;
         }
 
         .about-container__intro__content {
@@ -103,6 +106,7 @@
             font-size: 0.9rem;
             font-family: $text-font-family;
             color: $paragraph-text-color;
+            margin-bottom: 20px;
           }
 
           .about-container__intro__content__btn {

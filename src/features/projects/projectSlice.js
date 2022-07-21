@@ -2,11 +2,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:1337/api';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const initialState = {
   projects: [],
-  // project: {},
   loading: false,
   error: null,
 };

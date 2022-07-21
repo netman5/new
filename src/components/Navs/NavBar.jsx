@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link as LinkR } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link as LinkS } from 'react-scroll';
 import Menu from '../../Icons/Icons';
 
 const NavBar = ({ links }) => {
@@ -11,11 +12,10 @@ const NavBar = ({ links }) => {
     <nav className="navigation">
       <h1>
         {' '}
-        <a href="/" className="brandName">
-          <span>Oladipupo</span>
-          {' '}
-          Ishola
-        </a>
+        <LinkR to="/" className="brandName">
+          <span>Oi</span>
+          sh
+        </LinkR>
       </h1>
       <button
         type="button"
@@ -29,17 +29,23 @@ const NavBar = ({ links }) => {
         <ul>
           {links.map((link) => (
             <li key={link.id}>
-              <NavLink
+              <LinkS
                 to={link.path}
-                style={({ isActive }) => ({
-                  color: isActive ? '#65D493' : '',
-                  borderBottom: isActive ? '1px solid #65D493' : '',
-                  transform: isActive ? 'translateX(0)' : 'translateX(-10%)',
-                })}
+                spy
+                smooth
+                duration={1000}
+                activeClass="active"
+                className="nav-links"
+                // offset={-70}
+                // style={({ isActive }) => ({
+                //   color: isActive ? '#65D493' : '',
+                //   borderBottom: isActive ? '1px solid #65D493' : '',
+                //   transform: isActive ? 'translateX(0)' : 'translateX(-10%)',
+                // })}
                 onClick={() => setIsNavExpanded(!isNavExpanded)}
               >
                 {link.name}
-              </NavLink>
+              </LinkS>
             </li>
           ))}
         </ul>

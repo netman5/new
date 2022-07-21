@@ -43,6 +43,18 @@
   transition: all 0.3s ease-in-out;
 }
 
+
+.nav-links{
+  cursor: pointer;
+
+  &.active{
+    color: #65D493;
+    border-bottom: 1px solid #65D493;
+    transform: translateX(0);
+  }
+}
+
+
 .hamburger {
   border: 0;
   height: 40px;
@@ -71,7 +83,7 @@
 @media screen and (max-width: 768px) {
   body {
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .hamburger {

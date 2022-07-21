@@ -2,8 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const username = '@olaishola';
-const url = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed';
+const url = process.env.REACT_APP_MEDIUM_URL;
 
 const initialState = {
   blogs: [],
@@ -13,7 +12,7 @@ const initialState = {
 
 export const getBlogs = createAsyncThunk('blogs/getBlogs', async (args, thunkAPI) => {
   try {
-    const response = await axios.get(`${url}/${username}`);
+    const response = await axios.get(`${url}/${process.env.REACT_APP_MEDIUM_USERNAME}`);
     return response.data.items;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);

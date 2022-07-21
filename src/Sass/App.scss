@@ -7,11 +7,14 @@
 @import './partials/about.module';
 @import './partials/works';
 @import './partials/blogs';
+@import './partials/contact';
+@import './partials/modal';
 
-body {
-  .App {
-    display: flex;
-    flex-direction: column;
+
+.App {
+    display: grid;
     width: 100%;
-  }
+    line-height: 1.5;
+
+
 }
