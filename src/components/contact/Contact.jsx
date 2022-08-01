@@ -117,7 +117,7 @@ const Contact = () => {
           <div className="contact__right">
             <div className="contact__info">
               <h2 data-aos="fade-down">Contact Info</h2>
-              <p data-aos="fade-down">Email: olaishola@hotmail.co.uk</p>
+              <p data-aos="fade-down"><a href="mailto:olaishola@hotmail.co.uk">Email: olaishola@hotmail.co.uk</a></p>
             </div>
 
             <div
