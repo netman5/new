@@ -34,7 +34,7 @@ const Blogs = () => {
             data-aos-anchor-placement="top-bottom"
           >
             {blogLists.map((blog) => (
-              <div className="blog_container__item" key={blog.guid}>
+              <div className="blog_container__item" key={blog.guid} data-aos="fade-down-up">
                 <div className="blog_container__item__image">
                   <img src={blog.thumbnail} alt={blog.title} />
                 </div>
