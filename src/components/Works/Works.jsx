@@ -25,11 +25,17 @@ const Works = () => {
       <div className="work-container">
         <div className="work-container__contents">
           <div className="work-container__contents__title">
-            <h2>My recent Works</h2>
+            <h2 data-aos="fade-down-right">My recent Works</h2>
           </div>
-          <div className="work-content__items">
+          <div className="work-content__items" data-aos="zoom-in-down">
             {data.map(({ id, attributes }) => (
-              <div key={id} className="work-content__item">
+              <div
+                key={id}
+                className="work-content__item"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+              >
                 <h3>{attributes.name}</h3>
                 <div className="content__item__top">
                   <div className="content__item__top__container">

@@ -10,8 +10,9 @@
     margin: 0 auto;
 
     .work-container__contents__title h2 {
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-family: $font-family-heading;
       color: white;
       margin-bottom: 20px;
       text-align: center;
@@ -56,6 +57,7 @@
           .content__item__top__container {
             display: flex;
             justify-content: space-between;
+            color: $gold-color;
           }
 
           .stacks-lists {
@@ -71,7 +73,6 @@
         }
 
         .work-content__item-image {
-          // width: 80%;
           margin: auto;
           margin-bottom: 10px;
 
@@ -80,7 +81,6 @@
             max-height: 250px;
             object-fit: cover;
             border-radius: 3px;
-            // opacity: 0.65;
           }
         }
 
@@ -140,6 +140,10 @@
 
           .live {
             background-color: $text-highlight-color;
+            color: #000;
+          }
+
+          .repo{
             color: #000;
           }
         }

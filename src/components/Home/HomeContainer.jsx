@@ -14,7 +14,7 @@ const override = {
 };
 
 function HomeContainer() {
-  const color = '#65d493';
+  const color = '#F2D49D';
   return (
     <>
       <ErrorBoundary>
