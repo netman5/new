@@ -16,7 +16,7 @@
     width: 100%;
     line-height: 1.5;
 
-    @media (max-width: 821px) {
+    @media screen and (max-width: 912px) {
         grid-template-columns: 1fr;
 
         .home-container{

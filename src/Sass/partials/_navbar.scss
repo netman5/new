@@ -61,8 +61,8 @@
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #283b8b;
-  color: #fff;
+  background-color: $text-highlight-color;
+  color: $gold-color;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   position: absolute;
@@ -73,17 +73,16 @@
 }
 
 .hamburger:hover {
-  background-color: #2642af;
+  background-color: $text-highlight-color;
 }
 
 .navigationMenu li a:hover {
   color: $text-highlight-color;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 912px) {
   body {
     width: 100%;
-    // overflow: hidden;
   }
 
   .hamburger {
@@ -98,14 +97,14 @@
     flex-direction: column;
     width: 100%;
     height: calc(100vh - 77px);
-    background-color: #2642af;
+    background-color: $text-highlight-color;
     border-top: 1px solid black;
-
-    /* color: white; */
+    z-index: 1;
   }
 
   .navigationMenu.expanded ul {
     display: block;
+    // width: 70%;
   }
 
   .navigationMenu li {
