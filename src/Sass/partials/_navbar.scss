@@ -11,7 +11,7 @@
 
 .brandName {
   font-size: 1.5rem;
-  color: $paragraph-text-color;
+  color: $gold-color;
   margin-left: 1rem;
 
   span {
@@ -37,7 +37,7 @@
   display: block;
   width: 100%;
   text-decoration: none;
-  color: white;
+  color: $gold-color;
   font-size: 1rem;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
