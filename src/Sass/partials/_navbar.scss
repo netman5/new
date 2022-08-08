@@ -80,11 +80,7 @@
   color: $text-highlight-color;
 }
 
-@media screen and (max-width: 912px) {
-  body {
-    width: 100%;
-  }
-
+@media screen and (max-width: 860px) {
   .hamburger {
     display: block;
   }
@@ -104,7 +100,6 @@
 
   .navigationMenu.expanded ul {
     display: block;
-    // width: 70%;
   }
 
   .navigationMenu li {
