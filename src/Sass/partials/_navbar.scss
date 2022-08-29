@@ -80,7 +80,51 @@
   color: $text-highlight-color;
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) {
+  body{
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navigationMenu ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: $text-highlight-color;
+    border-top: 1px solid black;
+    z-index: 1;
+  }
+
+  .navigationMenu.expanded ul {
+    display: block;
+  }
+
+  .navigationMenu li {
+    text-align: center;
+    margin: 0;
+  }
+
+  .navigationMenu li a {
+    color: white;
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .navigationMenu li a:hover {
+    background-color: #eee;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
   body{
     width: 100%;
   }
